@@ -7,9 +7,11 @@ function loadPrefixes(htmlEl) {
         .then(response => response.json())
         .then(json => {
             let options = "";
+            // HACK: Auto-select italian prefix
+            const lang = navigator.language || navigator.userLanguage;
             Object.keys(json).forEach((key) => {
                 let value = json[key];
-                options += `<option value='${key}'>${key} ${value}</option>\n`
+                options += `<option value='${key}' ${lang === 'it-IT' && key === '+39' ? 'selected' : ''}>${key} ${value}</option>\n`
             })
             htmlEl.html(options);
         });
