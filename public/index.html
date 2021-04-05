@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Have I Been Facebooked?</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/css/main.css" rel="stylesheet">
+    <link href="/static/favicon.ico" rel="icon">
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <h1 class="title">Have I Been Facebooked?</h1>
+                <p class="subtitle">
+                    Check if you're interested in the <strong>Facebook April 2021 data dump</strong>.
+                </p>
+
+                <div id="search_form">
+                    <label class="label" for="search_input">Check your phone number</label>
+                    <div class="field has-addons">
+                        <div class="control" id="search_control">
+                            <input id="search_input" class="input" type="text" placeholder="Phone number with prefix" />
+                        </div>
+                        <div class="control">
+                            <button type="submit" class="button" id="search_button">Search</button>
+                        </div>
+                    </div>
+                    <div class="help hide" id="error"></div>
+                </div>
+
+                Unlike Facebook, we don't store any personal information whatsoever.
+            </div>
+        </section>
+        <section id="results-section-danger" class="section has-background-danger-dark has-text-white hide">
+            <div class="container">
+                <div class="content">
+                    <h3>You have been Facebooked.</h3>
+                    <ul>
+                        <li>Your phone number has been found in the <code id="result_country-name"></code> dump,
+                            among <span id="result_country-count"></span> others;</li>
+                        <li>Linked to your phone number, we've found the following data:</li>
+                        <ul>
+                            <li>Facebook account ID</li>
+                            <li class="hide" id="result_first-name">First name</li>
+                            <li class="hide" id="result_last-name">Last name</li>
+                            <li class="hide" id="result_gender">Gender</li>
+                            <li class="hide" id="result_relationship-status">Relationship status</li>
+                            <li class="hide" id="result_location">Location</li>
+                            <li class="hide" id="result_workplace">Workplace</li>
+                        </ul>
+                    </ul>
+
+                    <h3>What should I do now?</h3>
+                    <p>
+                        The leak is publicly available, which means anyone with a background in computer science can access it and look at your data.
+                        With that in mind, the most common use of this leak will most likely be mass fishing. To keep yourself safe, you shouldn't:
+                    </p>
+                    <ul>
+                        <li>open unknown links, especially if they were sent to you via texts or instant messaging apps</li>
+                        <li>send your personal and/or business credentials to anyone you don't fully trust</li>
+                        <li>trust any call and/or text message sent to your phone number</li>
+                    </ul>
+                    <p>
+                        This leak might also be used to engage in stalking and personal harassment.
+                        You might need to consider changing your phone number if things get out of hand.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="results-section-success" class="section has-background-success-dark has-text-white hide">
+            <div class="container">
+                <div class="content">
+                    <h3>You have not been Facebooked.</h3>
+                    <p>
+                        Your phone number has not been found in the leak. This is good, but you should be worried anyway.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="content">
+                    <h3>What happened?</h3>
+                    <p>
+                        In April 2021, a huge dataset of personal data which includes over 500 milion users' details <a href="https://www.businessinsider.com/stolen-data-of-533-million-facebook-users-leaked-online-2021-4?IR=T">has been published online</a>. The hackers most likely got a hold of the data a few months ago but they only decided to publish their findings now. The biggest threat, if your data is in the dump, would be phishing and personal harassment.
+                    </p>
+
+                    <h3>What data has been leaked?</h3>
+                    Along with phone numbers, the following data has been leaked:
+                    <ul>
+                        <li>Facebook Account ID</li>
+                        <li>Full Name</li>
+                        <li>Gender</li>
+                        <li>Relationship status</li>
+                        <li>Home address and birth location</li>
+                        <li>Workplace</li>
+                    </ul>
+
+                    <h3>Is Facebook still safe to use?</h3>
+                    <p>
+                        Currently, we don't know if Facebook fixed the vulnerability since it hasn't released any statement about this fact.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div class="push"></div>
+    </div>
+
+    <footer id="footer" class="section has-background-grey-lighter">
+        <div class="container">
+            Created with <3 by <span id="credits"></span>. <br />
+            Source code available soon&trade;.
+        </div>
+    </footer>
+
+    <script src="/static/js/jquery-3.6.0.min.js"></script>
+    <script src="/static/js/main.js"></script>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+            data-cf-beacon='{"token": "0efc375b2aae4095a51b21553ed48345"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
