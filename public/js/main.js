@@ -52,7 +52,7 @@ $(function() {
         search_control.addClass("is-loading");
         $.ajax({
             url: "https://api.haveibeenfacebooked.com/search",
-            type: "get",
+            type: "post",
             data: {
                 phone_number: query,
             },
