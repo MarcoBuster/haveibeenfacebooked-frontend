@@ -20,14 +20,21 @@
                 <div id="search_form">
                     <label class="label" for="search_input">Check your phone number</label>
                     <div class="field has-addons">
+                        <div class="control">
+                            <span class="select">
+                              <select id="search_prefix" class="input">
+                                  <option value="NULL">Loading...</option>
+                              </select>
+                            </span>
+                        </div>
                         <div class="control" id="search_control">
-                            <input id="search_input" class="input" type="text" placeholder="Phone number with prefix" />
+                            <input id="search_input" class="input" type="text" placeholder="Phone number" />
                         </div>
                         <div class="control">
                             <button type="submit" class="button" id="search_button">Search</button>
                         </div>
                     </div>
-                    <div class="help hide" id="error"></div>
+                    <div class="hide" id="error" style="color: #f04b4c;"></div>
                 </div>
 
                 Unlike Facebook, we don't store any personal information whatsoever.
