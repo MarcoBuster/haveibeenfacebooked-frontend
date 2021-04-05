@@ -25,7 +25,7 @@ $(function() {
     // fair credits
     const credits_span = $('#credits');
     const marco = "<a target='_blank' href=\"https://github.com/MarcoBuster\">Marco Aceti</a>";
-    const fumaz = "<a target='_blank' href=\"https://fumaz.dev\">Alessandro Fumagalli</a>";
+    const fumaz = "<a target='_blank' href=\"https://fumaz.dev\">Fumaz</a>";
     if (Math.round(Math.random()) === 0) {
         credits_span.html(`${marco} and ${fumaz}`)
     } else {
