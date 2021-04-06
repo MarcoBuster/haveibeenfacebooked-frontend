@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <title>Have I Been Facebooked?</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Have I Been Facebooked? Controlla se i tuoi dati fanno parte della violazione avvenuta su Facebook nell'Aprile del 2021.">
+
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/favicon.ico" rel="icon">
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <h1 class="title">Have I Been Facebooked?</h1>
+                <p class="subtitle">Controlla se i tuoi dati fanno parte della <strong>violazione avvenuta su Facebook
+                        nell'Aprile del 2021</strong>.</p>
+                <div id="search_form"><label class="label" for="search_input">Controlla il tuo numero di
+                        telefono:</label>
+                    <div class="field has-addons">
+                        <div class="control"><span class="select"><select id="search_prefix" class="input">
+                                    <option value="NULL">Caricamento...</option>
+                                </select></span></div>
+                        <div id="search_control" class="control"><input id="search_input" class="input" type="text"
+                                placeholder="Numero di telefono" /></div>
+                        <div class="control"><button id="search_button" class="button" type="submit">Cerca</button>
+                        </div>
+                    </div>
+                    <div id="error" class="hide" style="color: #f04b4c;">&nbsp;</div>
+                </div>
+                Al contrario di Facebook, questo sito non registra alcun tipo di informazione personale.
+            </div>
+        </section>
+        <section id="results-section-danger" class="section has-background-danger-dark has-text-white hide">
+            <div class="container">
+                <div class="content">
+                    <h3>Il tuo profilo Facebook &egrave; stato violato.</h3>
+                    <ul>
+                        <li>Il tuo numero di telefono &egrave; stato trovato tra quelli sottratti nella violazione;</li>
+                        <li>Connessi al tuo numero di telefono, abbiamo individuato i seguenti dati personali:</li>
+                        <ul>
+                            <li>ID dell'account Facebook</li>
+                            <li id="result_first-name" class="hide">Nome</li>
+                            <li id="result_last-name" class="hide">Cognome</li>
+                            <li id="result_gender" class="hide">Genere</li>
+                            <li id="result_relationship-status" class="hide">Situazione sentimentale</li>
+                            <li id="result_location" class="hide">Posizione</li>
+                            <li id="result_workplace" class="hide">Posto di lavoro</li>
+                        </ul>
+                    </ul>
+                    <h3>Cosa devo fare adesso?</h3>
+                    <p>I dati sottratti sono pubblicamente accessibili, il che vuol dire che chiunque con un background
+                        in Informatica pu&ograve; avervi accesso e consultarli. Considerato questo, l'utilizzo
+                        pi&ugrave; probabile di questi dati sar&agrave; per operazioni di <a
+                            href="https://it.wikipedia.org/wiki/Phishing">phishing</a> di massa. Per stare al sicuro
+                        evita di:</p>
+                    <ul>
+                        <li>aprire link sconosciuti, specialmente se ti sono stati inviati via SMS o tramite chat di
+                            messaggistica istantanea (ad esempio: Whatsapp, Telegram, Facebook Messenger, Signal)</li>
+                        <li>mandare le tue credenziali personali e di lavoro a qualcuno di cui non ti fidi completamente
+                        </li>
+                        <li>fidarti di qualsiasi chiamata e/o messaggio di testo indirizzati al tuo numero di telefono
+                        </li>
+                    </ul>
+                    <p>Questa violazione dati potrebbe inoltre essere usata a fini di stalking e di molestie personali.
+                        Se ritieni di essere a rischio, considera l'idea di cambiare numero di telefono.</p>
+                </div>
+            </div>
+        </section>
+        <section id="results-section-success" class="section has-background-success-dark has-text-white hide">
+            <div class="container">
+                <div class="content">
+                    <h3>Il tuo profilo Facebook non &egrave; stato violato</h3>
+                    <p>Il tuo numero di telefono non &egrave; stato trovato tra quelli sottratti nella violazione.
+                        Questo &egrave; bene, ma la situazione &egrave; comunque critica.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="content">
+                    <h3>Cos'&egrave; successo?</h3>
+                    <p>Nell'Aprile del 2021, un enorme dataset di dati personali, comprendente dettagli personali per
+                        pi&ugrave; di 500 milioni di utenti Facebook, <a
+                            href="https://www.businessinsider.com/stolen-data-of-533-million-facebook-users-leaked-online-2021-4?IR=T">
+                            &egrave; stato rilasciato online</a>. Gli autori della violazione molto probabilmente hanno
+                        avuto accesso ai dati gi&agrave; da alcuni mesi, ma hanno deciso solo adesso di condividere
+                        ci&ograve; che hanno trovato. Se i tuoi dati si trovano tra quelli prelevati, i rischi maggiori
+                        a cui sei esposto sono il phishing e le molestie personali.&nbsp;</p>
+                    <h3>Che tipo di dati sono stati violati?</h3>
+                    Insieme ai numeri di telefono, sono stati prelevati i seguenti dettagli personali:
+                    <ul>
+                        <li>ID dell'account Facebook</li>
+                        <li id="result_first-name" class="hide">Nome e cognome</li>
+                        <li id="result_gender" class="hide">Genere</li>
+                        <li id="result_relationship-status" class="hide">Situazione sentimentale</li>
+                        <li id="result_location" class="hide">Indirizzo di casa e luogo di nascita</li>
+                        <li id="result_workplace" class="hide">Posto di lavoro</li>
+                    </ul>
+                    <h3>Al momento &egrave; sicuro utilizzare Facebook?</h3>
+                    <p>Al momento non siamo a conoscenza di interventi da parte di Facebook per&nbsp; sistemare la
+                        vulnerabilit&agrave; che ha causato il problema dal momento che Facebook non ha ancora
+                        rilasciato nessun commento al riguardo.&nbsp;</p>
+                </div>
+            </div>
+        </section>
+        <div class="push">&nbsp;</div>
+    </div>
+    <footer id="footer" class="section has-background-grey-lighter">
+        <div class="container">Fatto col &lt;3 da&nbsp;<span id="credits"></span>. Codice: <a
+                href="https://github.com/MarcoBuster/haveibeenfacebooked-frontend">frontend</a> e <a
+                href="https://github.com/Fumaz/haveibeenfacebooked-api">backend</a>. <br />Questo sito non &egrave;
+            associato con Facebook, Inc. Contatto stampa: <a
+                href="mailto:press@haveibeenfacebooked.com">press@haveibeenfacebooked.com</a>.</div>
+    </footer>
+
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/main.js"></script>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "0efc375b2aae4095a51b21553ed48345"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>
