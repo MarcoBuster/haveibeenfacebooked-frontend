@@ -70,14 +70,25 @@ $(function() {
             search_prefix.addClass("is-danger");
             return;
         }
-        query = prefix + query
         search_prefix.removeClass("is-danger");
         search_control.addClass("is-loading");
+        query = prefix + query
+
+        let sanitized = "";
+        for (let i = 0; i < query.length; i++) {
+            if (!/^\d+$/.test(query[i])) {
+                continue;
+            }
+            sanitized += query[i]
+        }
+        const hasher = forge.md.sha256.create()
+        const hashed = hasher.update(sanitized).digest().toHex();
+
         $.ajax({
             url: "https://api.haveibeenfacebooked.com/search",
             type: "post",
             data: {
-                phone_number: query,
+                phone_number: hashed,
             },
             success: (resp) => {
                 search_control.removeClass("is-loading");
