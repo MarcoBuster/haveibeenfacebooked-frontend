@@ -54,6 +54,16 @@ $(function() {
         credits_span.html(`${fumaz} and ${marco}`)
     }
 
+    // start search when "key enter" is pressed
+    search_input.on("keypress", (event) => {
+     var key = event.which;
+     if(key == 13)
+      {
+        $('#search_button').click();
+        return false;  
+      }
+    }); 
+    
     // on search
     search_button.on("click", (event) => {
         $('.hide').hide();
