@@ -21,8 +21,10 @@ let numberElement = document.getElementById("search_input");
 numberElement.addEventListener("paste", (e) => {
     // get data from clipboard
     let data = (e.clipboardData || window.clipboardData)
-        .getData("text")
-        .replace(/[^0-9+]/g, ""); // clean up input
+        .getData("text");
+    if (data.length === 64)  // data is hash, ignore
+        return;
+    data = data.replace(/[^0-9+]/g, ""); // clean up input
     const match = data.match(PREFIX_REGEXP);
     if (match) {
         // we got a match, substitute prefix and whole number
@@ -69,18 +71,23 @@ $(function() {
         }
         search_prefix.removeClass("is-danger");
         search_control.addClass("is-loading");
-        query = prefix + query
 
-        let sanitized = "";
-        for (let i = 0; i < query.length; i++) {
-            if (!/^\d+$/.test(query[i])) {
-                continue;
+        let hashed;
+        if (query.length !== 64) {
+            query = prefix + query
+
+            let sanitized = "";
+            for (let i = 0; i < query.length; i++) {
+                if (!/^\d+$/.test(query[i])) {
+                    continue;
+                }
+                sanitized += query[i]
             }
-            sanitized += query[i]
+            const hasher = forge.md.sha256.create()
+            hashed = hasher.update(sanitized).digest().toHex();
+        } else {
+            hashed = query;
         }
-        const hasher = forge.md.sha256.create()
-        const hashed = hasher.update(sanitized).digest().toHex();
-
         $.ajax({
             url: "https://api.haveibeenfacebooked.com/search",
             type: "post",
