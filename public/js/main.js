@@ -17,6 +17,27 @@ function loadPrefixes(htmlEl) {
         });
 }
 
+const PREFIX_REGEXP = /^(?:\+|00)(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1)(\d+)$/;
+let prefixElement = document.getElementById("search_prefix");
+let numberElement = document.getElementById("search_input");
+
+numberElement.addEventListener("paste", (e) => {
+    // get data from clipboard
+    let data = (e.clipboardData || window.clipboardData)
+        .getData("text")
+        .replace(/[^0-9+]/g, ""); // clean up input
+    const match = data.match(PREFIX_REGEXP);
+    if (match) {
+        // we got a match, substitute prefix and whole number
+        prefixElement.value = "+" + match[1];
+        numberElement.value = match[2];
+    } else {
+        // no match (maybe wrong format?), substitute all
+        numberElement.value = data;
+    }
+    e.preventDefault();
+});
+
 $(function() {
     const search_button = $("#search_button");
     const search_input = $("#search_input");
